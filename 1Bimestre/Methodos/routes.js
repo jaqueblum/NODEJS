@@ -5,10 +5,9 @@ const multer = require('multer');
 //Solicitação do nossos arquivos do MVC e config
 const UploadConfig       = require('./config/upload');
 const UserController     = require('./Controller/User');
-const ModeloController   = require('./Controller/Modelo');
 const EnderecoController = require('./Controller/Endereco');
 const MateriaController    = require('./Controller/Materia');
-const VeiculoController    = require('./Controller/Veiculo');
+const NotasController    = require('./Controller/Notas');
 
 
 const routes = express.Router();
@@ -33,11 +32,6 @@ routes.post('/users',         upload.single('thumb'),UserController.store);
 routes.put('/users/:id',      UserController.update);
 routes.delete('/users/:id',   UserController.destroy);
 
-routes.get('/modelo',         ModeloController.index);
-routes.get('/modelo/:id',     ModeloController.show);
-routes.post('/modelo',   upload.single('thumb'), ModeloController.store);
-routes.put('/modelo/:id',upload.single('thumb'), ModeloController.update);
-routes.delete('/modelo/:id',  ModeloController.destroy);
 
 routes.get('/materia',          MateriaController.index);
 routes.get('/materia/:id',      MateriaController.show);
@@ -51,10 +45,11 @@ routes.post('/endereco',      EnderecoController.store);
 routes.put('/endereco/:id',   EnderecoController.update);
 routes.delete('/endereco/:id',EnderecoController.destroy); 
 
-routes.get('/veiculo',        VeiculoController.index);
-routes.get('/veiculo/:id',    VeiculoController.show);
-routes.post('/veiculo',    upload.single('thumb'), VeiculoController.store);
-routes.put('/veiculo/:id', upload.single('thumb'), VeiculoController.update);
-routes.delete('/veiculo/:id', VeiculoController.destroy);
+routes.get('/notas',       NotasController.index);
+routes.get('/notas/:id',   NotasController.show);
+routes.post('/notas',      NotasController.store);
+routes.put('/notas/:id',   NotasController.update);
+routes.delete('/notas/:id',NotasController.destroy); 
+
 
 module.exports = routes;
