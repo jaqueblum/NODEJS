@@ -51,5 +51,9 @@ routes.post('/notas',      NotasController.store);
 routes.put('/notas/:id',   NotasController.update);
 routes.delete('/notas/:id',NotasController.destroy); 
 
+routes.get('/protocolo',       NotasController.index);
+routes.get('/protocolo:id',   NotasController.show);
+routes.post('/protocolo',      NotasController.store);
+
 
 module.exports = routes;
